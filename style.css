@@ -100,9 +100,7 @@ h1, h2, h3, h4, h5 {
 .nav-icon {
   width: 36px;
   height: 36px;
-  border-radius: 8px;
-  object-fit: cover;
-  filter: brightness(0) invert(1);
+  color: white;
 }
 
 .nav-wordmark {
@@ -1335,8 +1333,7 @@ h1, h2, h3, h4, h5 {
 .footer-logo {
   width: 40px;
   height: 40px;
-  border-radius: 8px;
-  filter: brightness(0) invert(1);
+  color: white;
 }
 
 .footer-wordmark {
