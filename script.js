@@ -107,22 +107,37 @@ document.querySelectorAll('.stat[data-anim]').forEach((el) => statObserver.obser
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
+
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
 
   // Collect form data
   const formData = new FormData(contactForm);
   const data = Object.fromEntries(formData.entries());
 
-  // For now, simulate submission (replace with real endpoint)
-  console.log('Form submitted:', data);
+  try {
+    const res = await fetch('https://dojogate.fly.dev/api/v1/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
 
-  // Show success state
-  contactForm.style.display = 'none';
-  formSuccess.style.display = 'block';
+    if (!res.ok) throw new Error('Server error');
 
-  // Scroll to success message
-  formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Show success state
+    contactForm.style.display = 'none';
+    formSuccess.style.display = 'block';
+    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } catch (err) {
+    console.error('Form submission failed:', err);
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+    alert('Something went wrong. Please try again or email us directly.');
+  }
 });
 
 // Smooth scroll for anchor links
