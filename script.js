@@ -72,7 +72,7 @@ function animateNumber(el, from, to) {
 
   function tick(now) {
     const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    const eased = 1 - Math.pow(1 - progress, 3);
     const current = Math.round(from + (to - from) * eased);
     el.textContent = current;
     if (progress < 1) requestAnimationFrame(tick);
@@ -82,9 +82,6 @@ function animateNumber(el, from, to) {
 }
 
 billingToggle.addEventListener('change', updatePricing);
-
-// Initialize: monthly active
-monthlyLabel.classList.add('active');
 
 // Count-up animation for stats bar
 const statObserver = new IntersectionObserver(
@@ -106,7 +103,29 @@ const statObserver = new IntersectionObserver(
 
 document.querySelectorAll('.stat[data-anim]').forEach((el) => statObserver.observe(el));
 
-// Smooth scroll for anchor links (fallback for older browsers)
+// Contact form submission
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+
+contactForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // Collect form data
+  const formData = new FormData(contactForm);
+  const data = Object.fromEntries(formData.entries());
+
+  // For now, simulate submission (replace with real endpoint)
+  console.log('Form submitted:', data);
+
+  // Show success state
+  contactForm.style.display = 'none';
+  formSuccess.style.display = 'block';
+
+  // Scroll to success message
+  formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
+// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener('click', (e) => {
     const target = document.querySelector(a.getAttribute('href'));
