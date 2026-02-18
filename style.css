@@ -145,6 +145,10 @@ h1, h2, h3, h4, h5 {
   border-color: var(--teal-hover);
 }
 
+.nav-mobile-actions {
+  display: none;
+}
+
 
 .nav-toggle {
   display: none;
@@ -1463,6 +1467,14 @@ h1, h2, h3, h4, h5 {
     padding: 24px;
     gap: 16px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-links.open .nav-mobile-actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 16px;
+    margin-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.1);
   }
 
   /* Hero — center everything on mobile */
