@@ -225,6 +225,7 @@ h1, h2, h3, h4, h5 {
 .btn-sm { padding: 8px 20px; font-size: 0.875rem; }
 .btn-lg { padding: 18px 36px; font-size: 1.1rem; }
 .btn-block { width: 100%; }
+.btn-mt { margin-top: 8px; }
 
 .btn-text {
   color: var(--white);
