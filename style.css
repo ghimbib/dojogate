@@ -1449,3 +1449,59 @@ h1, h2, h3, h4, h5 {
 
 @media (max-width: 768px) {
   .nav-links, .nav-actions { display: none; }
+  .nav-toggle { display: flex; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--navy);
+    padding: 24px;
+    gap: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* Hero — center everything on mobile */
+  .hero { padding: 120px 0 60px; }
+  .hero-content { text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .hero-tagline-badge { text-align: center; }
+  .hero-headline { font-size: 2.25rem; text-align: center; }
+  .hero-sub { text-align: center; margin-left: auto; margin-right: auto; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn { width: 100%; max-width: 320px; text-align: center; }
+  .hero-ctas .btn-text { text-align: center; }
+  .hero-micro { text-align: center; }
+  .hero-social { flex-direction: column; text-align: center; align-items: center; }
+
+  /* Approval flow visual */
+  .approval-flow { gap: 4px; }
+  .flow-step { min-width: 72px; padding: 10px 8px; }
+  .flow-arrow { font-size: 0.9rem; }
+
+  /* Grids → single column */
+  .pain-grid { grid-template-columns: 1fr; }
+  .step { grid-template-columns: 1fr; }
+  .step-num { font-size: 2.5rem; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .industry-grid { grid-template-columns: 1fr; }
+  .industry-grid > :last-child { max-width: 100%; }
+  .proof-grid { grid-template-columns: 1fr; }
+  .proof-grid > :last-child { max-width: 100%; }
+  .stats-bar { grid-template-columns: 1fr; gap: 24px; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-grid > .price-card:last-child { grid-column: auto; max-width: 100%; }
+  .contact-grid { grid-template-columns: 1fr; }
+
+  /* Section headings */
+  .section-title { font-size: 1.75rem; }
+  .section-sub { font-size: 1rem; }
+
+  /* Footer */
+  .footer-top { flex-direction: column; text-align: center; }
+  .footer-links { flex-direction: column; gap: 32px; text-align: center; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .footer-legal { justify-content: center; }
+}
