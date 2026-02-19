@@ -123,7 +123,7 @@ contactForm.addEventListener('submit', async (e) => {
     // Get reCAPTCHA v3 token (invisible — no user interaction)
     let recaptchaToken = null;
     if (typeof grecaptcha !== 'undefined') {
-      recaptchaToken = await grecaptcha.execute('RECAPTCHA_SITE_KEY_PLACEHOLDER', { action: 'contact_form' });
+      recaptchaToken = await grecaptcha.execute('6LegbXAsAAAAAOWyBz8xoGeeY6yMRpcm06nUKelG', { action: 'contact_form' });
     }
 
     const res = await fetch('https://app.dojogate.ai/api/v1/contact', {
