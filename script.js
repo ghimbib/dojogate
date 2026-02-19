@@ -120,13 +120,22 @@ contactForm.addEventListener('submit', async (e) => {
   const data = Object.fromEntries(formData.entries());
 
   try {
-    const res = await fetch('https://dojogate.fly.dev/api/v1/contact', {
+    // Get reCAPTCHA v3 token (invisible — no user interaction)
+    let recaptchaToken = null;
+    if (typeof grecaptcha !== 'undefined') {
+      recaptchaToken = await grecaptcha.execute('RECAPTCHA_SITE_KEY_PLACEHOLDER', { action: 'contact_form' });
+    }
+
+    const res = await fetch('https://app.dojogate.ai/api/v1/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data, recaptcha_token: recaptchaToken }),
     });
 
-    if (!res.ok) throw new Error('Server error');
+    if (!res.ok) {
+      const errBody = await res.json().catch(() => ({}));
+      throw new Error(errBody.error || 'Server error');
+    }
 
     // Show success state
     contactForm.style.display = 'none';
@@ -136,7 +145,7 @@ contactForm.addEventListener('submit', async (e) => {
     console.error('Form submission failed:', err);
     submitBtn.textContent = originalText;
     submitBtn.disabled = false;
-    alert('Something went wrong. Please try again or email us directly.');
+    alert(err.message || 'Something went wrong. Please try again or email us directly.');
   }
 });
 
