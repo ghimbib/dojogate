@@ -137,6 +137,15 @@ contactForm.addEventListener('submit', async (e) => {
       throw new Error(errBody.error || 'Server error');
     }
 
+    // Track conversion in GA4
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'generate_lead', {
+        event_category: 'contact_form',
+        event_label: data.industry || 'not_specified',
+        value: 1,
+      });
+    }
+
     // Show success state
     contactForm.style.display = 'none';
     formSuccess.style.display = 'block';
