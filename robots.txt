@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block assets directory
+Disallow: /assets/
+
+Sitemap: https://dojogate.ai/sitemap.xml
