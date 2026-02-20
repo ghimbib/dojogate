@@ -1037,6 +1037,59 @@ h1, h2, h3, h4, h5 {
 }
 
 .price-num.custom { font-size: 2.5rem; }
+.price-num.promo { color: var(--teal); }
+
+.price-strike {
+  font-size: 1.1rem;
+  color: var(--gray-400);
+  text-decoration: line-through;
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.price-promo-note {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.promo-banner {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, rgba(0, 196, 180, 0.08), rgba(0, 196, 180, 0.15));
+  border: 1px solid rgba(0, 196, 180, 0.25);
+  border-radius: 0.5rem;
+  color: var(--navy);
+  font-size: 0.95rem;
+}
+
+.enterprise-cta {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1.5rem 2rem;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 0.75rem;
+}
+
+.enterprise-cta p {
+  color: var(--gray-600);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.enterprise-cta .btn {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+.enterprise-cta .btn:hover {
+  background: var(--navy);
+  color: #fff;
+}
 
 .price-period {
   font-size: 1rem;
