@@ -54,46 +54,27 @@ const billingToggle = document.getElementById('billingToggle');
 const monthlyLabel = document.getElementById('monthlyLabel');
 const annualLabel = document.getElementById('annualLabel');
 const priceNums = document.querySelectorAll('.price-num[data-monthly]');
-const priceStrikes = document.querySelectorAll('.price-strike[data-monthly]');
 
 function updatePricing() {
   const isAnnual = billingToggle.checked;
   monthlyLabel.classList.toggle('active', !isAnnual);
   annualLabel.classList.toggle('active', isAnnual);
 
-  // Update promo prices
   priceNums.forEach((el) => {
     const target = isAnnual ? el.dataset.annual : el.dataset.monthly;
-    animatePrice(el, parseFloat(el.textContent), parseFloat(target));
-  });
-
-  // Update strike-through prices
-  priceStrikes.forEach((el) => {
-    const target = isAnnual ? el.dataset.annual : el.dataset.monthly;
-    el.textContent = '$' + target;
-  });
-
-  // Update promo notes (for first 2 months text)
-  document.querySelectorAll('.price-promo-note').forEach((el) => {
-    const card = el.closest('.price-card');
-    const strike = card.querySelector('.price-strike');
-    if (strike) {
-      const regularPrice = isAnnual ? strike.dataset.annual : strike.dataset.monthly;
-      el.textContent = `for first 2 months, then $${regularPrice}/mo`;
-    }
+    animateNumber(el, parseInt(el.textContent), parseInt(target));
   });
 }
 
-function animatePrice(el, from, to) {
+function animateNumber(el, from, to) {
   const duration = 300;
   const start = performance.now();
-  const isDecimal = to % 1 !== 0;
 
   function tick(now) {
     const progress = Math.min((now - start) / duration, 1);
     const eased = 1 - Math.pow(1 - progress, 3);
-    const current = from + (to - from) * eased;
-    el.textContent = isDecimal ? current.toFixed(2) : Math.round(current);
+    const current = Math.round(from + (to - from) * eased);
+    el.textContent = current;
     if (progress < 1) requestAnimationFrame(tick);
   }
 

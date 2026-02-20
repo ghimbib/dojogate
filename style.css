@@ -1037,67 +1037,6 @@ h1, h2, h3, h4, h5 {
 }
 
 .price-num.custom { font-size: 2.5rem; }
-.price-num.promo { color: var(--teal); }
-
-/* Promo banner */
-.promo-banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: linear-gradient(90deg, rgba(0,196,180,0.1) 0%, rgba(0,196,180,0.05) 100%);
-  border: 1px solid rgba(0,196,180,0.3);
-  border-radius: 8px;
-  padding: 12px 24px;
-  margin-bottom: 32px;
-}
-.promo-tag {
-  background: var(--teal);
-  color: white;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-.promo-text {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--gray-900);
-}
-
-/* Strike-through price */
-.price-strike {
-  display: block;
-  font-size: 1rem;
-  color: var(--gray-400);
-  text-decoration: line-through;
-  margin-bottom: 4px;
-}
-
-/* Promo note under price */
-.price-promo-note {
-  font-size: 0.75rem;
-  color: var(--gray-500);
-  margin-top: 4px;
-  margin-bottom: 8px;
-}
-
-/* 4-column pricing grid */
-.pricing-grid-4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-/* Fine print */
-.pricing-fine-print {
-  font-size: 0.8rem;
-  color: var(--gray-500);
-  text-align: center;
-  max-width: 700px;
-  margin: 24px auto 0;
-  line-height: 1.6;
-}
 
 .price-period {
   font-size: 1rem;
@@ -1509,9 +1448,7 @@ h1, h2, h3, h4, h5 {
   .proof-grid > :last-child { grid-column: 1 / -1; max-width: 50%; justify-self: center; }
   .stats-bar { grid-template-columns: repeat(2, 1fr); }
   .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-  .pricing-grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .pricing-grid > .price-card:last-child { grid-column: auto; max-width: 100%; justify-self: stretch; }
-  .promo-banner { flex-direction: column; gap: 8px; text-align: center; }
+  .pricing-grid > .price-card:last-child { grid-column: 1 / -1; max-width: 50%; justify-self: center; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .footer-top { flex-direction: column; }
 }
@@ -1569,7 +1506,6 @@ h1, h2, h3, h4, h5 {
   .proof-grid > :last-child { max-width: 100%; }
   .stats-bar { grid-template-columns: 1fr; gap: 24px; }
   .pricing-grid { grid-template-columns: 1fr; }
-  .pricing-grid-4 { grid-template-columns: 1fr; }
   .pricing-grid > .price-card:last-child { grid-column: auto; max-width: 100%; }
   .contact-grid { grid-template-columns: 1fr; }
 
