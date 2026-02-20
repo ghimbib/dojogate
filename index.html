@@ -355,6 +355,12 @@
       <h2 class="section-title">Simple Pricing. Clear ROI.</h2>
       <p class="section-sub">Every plan includes a 7-day free trial. No credit card required.</p>
 
+      <!-- Launch Promo Banner -->
+      <div class="promo-banner" data-anim>
+        <span class="promo-tag">🚀 LAUNCH SPECIAL</span>
+        <span class="promo-text">50% off your first 2 months on all plans!</span>
+      </div>
+
       <div class="billing-toggle">
         <span class="toggle-label active" id="monthlyLabel">Monthly</span>
         <label class="toggle">
@@ -364,68 +370,102 @@
         <span class="toggle-label" id="annualLabel">Annual <span class="save-badge">Save 20%</span></span>
       </div>
 
-      <div class="pricing-grid">
+      <div class="pricing-grid pricing-grid-4">
+        <!-- Solo -->
         <div class="price-card" data-anim>
-          <div class="price-tier">Standard</div>
+          <div class="price-tier">Solo</div>
           <div class="price-amount">
+            <span class="price-strike" data-monthly="49" data-annual="39">$49</span>
             <span class="price-dollar">$</span>
-            <span class="price-num" data-monthly="100" data-annual="80">100</span>
+            <span class="price-num promo" data-monthly="24.50" data-annual="19.50">24.50</span>
             <span class="price-period">/mo</span>
           </div>
-          <p class="price-for">Small teams getting started with structured approvals</p>
+          <p class="price-promo-note">for first 2 months, then $49/mo</p>
+          <p class="price-for">Independent reps &amp; 1-person shops</p>
           <ul class="price-features">
-            <li>Up to 10 users</li>
-            <li>500 leads &middot; 200 opportunities</li>
-            <li>100 quotes/month</li>
-            <li>Approval routing</li>
-            <li>CSV &amp; PDF export</li>
-            <li>2 webhook integrations</li>
+            <li>1 user</li>
+            <li>100 contacts &middot; 50 quotes/month</li>
+            <li>Quote builder + PDF export</li>
+            <li>1 pipeline</li>
+            <li>Mobile access</li>
             <li>Email support</li>
           </ul>
-          <a href="https://app.dojogate.ai/register?plan=standard" class="btn btn-teal btn-block">Buy Now</a>
-          <a href="https://app.dojogate.ai/register" class="btn btn-outline btn-block btn-mt">Start Free Trial</a>
+          <a href="https://app.dojogate.ai/register?plan=solo" class="btn btn-teal btn-block">Start Solo — $24.50/mo</a>
         </div>
 
-        <div class="price-card featured" data-anim>
-          <div class="price-badge">✦ Most Popular</div>
-          <div class="price-tier">Premium</div>
+        <!-- Starter -->
+        <div class="price-card" data-anim>
+          <div class="price-tier">Starter</div>
           <div class="price-amount">
+            <span class="price-strike" data-monthly="79" data-annual="63">$79</span>
             <span class="price-dollar">$</span>
-            <span class="price-num" data-monthly="200" data-annual="160">200</span>
+            <span class="price-num promo" data-monthly="39.50" data-annual="31.50">39.50</span>
             <span class="price-period">/mo</span>
           </div>
-          <p class="price-for">Growing teams that need margin protection and fast cycles</p>
+          <p class="price-promo-note">for first 2 months, then $79/mo</p>
+          <p class="price-for">Small teams of 2–3 people</p>
           <ul class="price-features">
-            <li>Up to 20 users</li>
-            <li>Unlimited leads &amp; opportunities</li>
-            <li>Unlimited quotes</li>
-            <li>Volume pricing &amp; margin guardrails</li>
-            <li>Pipeline visibility dashboard</li>
-            <li>10 webhook integrations</li>
-            <li>Priority support</li>
+            <li>Up to 3 users</li>
+            <li>500 contacts &middot; 100 quotes/month</li>
+            <li>Approval routing (2 levels)</li>
+            <li>Basic pricing rules</li>
+            <li>2 pipelines</li>
+            <li>Email support</li>
           </ul>
-          <a href="https://app.dojogate.ai/register?plan=premium" class="btn btn-teal btn-block">Buy Now</a>
-          <a href="https://app.dojogate.ai/register" class="btn btn-outline btn-block btn-mt">Start Free Trial</a>
+          <a href="https://app.dojogate.ai/register?plan=starter" class="btn btn-teal btn-block">Start Team — $39.50/mo</a>
         </div>
 
+        <!-- Growth (Most Popular) -->
+        <div class="price-card featured" data-anim>
+          <div class="price-badge">✦ Most Popular</div>
+          <div class="price-tier">Growth</div>
+          <div class="price-amount">
+            <span class="price-strike" data-monthly="199" data-annual="159">$199</span>
+            <span class="price-dollar">$</span>
+            <span class="price-num promo" data-monthly="99.50" data-annual="79.50">99.50</span>
+            <span class="price-period">/mo</span>
+          </div>
+          <p class="price-promo-note">for first 2 months, then $199/mo</p>
+          <p class="price-for">Scaling teams that need full power</p>
+          <ul class="price-features">
+            <li>Up to 10 users</li>
+            <li>Unlimited contacts &middot; 400 quotes/month</li>
+            <li>Parallel approvals (unlimited levels)</li>
+            <li>Volume pricing &amp; margin guardrails</li>
+            <li>Salesforce + QuickBooks integration</li>
+            <li>Mobile approvals</li>
+            <li>Pipeline dashboard + analytics</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="https://app.dojogate.ai/register?plan=growth" class="btn btn-teal btn-block">Start Growth — $99.50/mo</a>
+        </div>
+
+        <!-- Enterprise -->
         <div class="price-card" data-anim>
           <div class="price-tier">Enterprise</div>
           <div class="price-amount">
             <span class="price-num custom">Custom</span>
           </div>
-          <p class="price-for">High-volume teams with complex pricing matrices</p>
+          <p class="price-for">High-volume teams with complex needs</p>
           <ul class="price-features">
             <li>100+ users</li>
             <li>Unlimited everything</li>
-            <li>Custom integrations &amp; API access</li>
+            <li>Custom integrations &amp; API</li>
             <li>Dedicated onboarding + CSM</li>
             <li>SLA: 99.9% uptime</li>
             <li>Custom approval workflows</li>
-            <li>Advanced analytics + margin reporting</li>
+            <li>Advanced analytics + reporting</li>
+            <li>SSO &amp; security features</li>
           </ul>
           <a href="#contact" class="btn btn-outline btn-block">Talk to Sales</a>
         </div>
       </div>
+
+      <p class="pricing-fine-print">
+        <strong>Limited Time Offer:</strong> 50% off first 2 months on Solo, Starter, and Growth plans. 
+        Auto-applied at checkout. Regular pricing resumes month 3. Cancel anytime. 
+        Not available on Enterprise or annual plans.
+      </p>
 
       <div class="pricing-trust">
         <span>🔒 SOC 2 Type II in progress</span>
