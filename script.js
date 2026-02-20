@@ -62,20 +62,28 @@ function updatePricing() {
 
   priceNums.forEach((el) => {
     const target = isAnnual ? el.dataset.annual : el.dataset.monthly;
-    animateNumber(el, parseInt(el.textContent), parseInt(target));
+    animateNumber(el, parseFloat(el.textContent), parseFloat(target));
+  });
+
+  // Also update strikethrough prices
+  document.querySelectorAll('.price-strike[data-monthly]').forEach((el) => {
+    const target = isAnnual ? el.dataset.annual : el.dataset.monthly;
+    el.textContent = '$' + target;
   });
 }
 
 function animateNumber(el, from, to) {
   const duration = 300;
   const start = performance.now();
+  const hasDecimal = String(to).includes('.') || to % 1 !== 0;
 
   function tick(now) {
     const progress = Math.min((now - start) / duration, 1);
     const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.round(from + (to - from) * eased);
-    el.textContent = current;
+    const current = from + (to - from) * eased;
+    el.textContent = hasDecimal ? current.toFixed(2) : Math.round(current);
     if (progress < 1) requestAnimationFrame(tick);
+    else el.textContent = hasDecimal ? to.toFixed(2) : to;
   }
 
   requestAnimationFrame(tick);
